@@ -31,9 +31,9 @@ const TrustedBy = () => {
         <h2 className="text-2xl font-bold mb-6">Trusted By</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 px-4">
           {logos.map((logo, index) => (
-            <a
+            <div
               key={index}
-              className="hover:opacity-75 transition-opacity duration-300"
+              className="flex w-[300px] justify-center items-center hover:opacity-75 transition-opacity duration-300"
             >
               <Image
                 src={logo.src}
@@ -41,8 +41,9 @@ const TrustedBy = () => {
                 width={100}
                 height={100}
                 objectFit="contain"
+                className="max-w-full aspect-[5/3] max-h-[100px] object-contain align-middle border-none"
               />
-            </a>
+            </div>
           ))}
         </div>
       </div>
