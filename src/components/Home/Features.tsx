@@ -1,13 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React, { ReactNode, useState, useTransition } from "react";
+import React, { ReactNode, useState } from "react";
 import FeatureTab from "./FeatureTab";
+
 interface Tab {
   id: number;
   title: string;
   content: ReactNode;
 }
+
 const Features = () => {
   const tabs: Tab[] = [
     {
@@ -71,13 +73,11 @@ const Features = () => {
       ),
     },
   ];
+
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-  const [isPending, startTransition] = useTransition();
 
   const changeTab = (id: number) => {
-    startTransition(() => {
-      setActiveTab(id);
-    });
+    setActiveTab(id);
   };
 
   return (
@@ -92,10 +92,10 @@ const Features = () => {
           Our
           <span className="inline-block rounded-lg bg-[#f24e1e] text-white ml-2 px-2 ">
             Features
-          </span>{" "}
+          </span>
         </motion.h1>
 
-        <div className="bg-white border-2 w-full md:w-3/4 mt-8 border-[#727272] shadow-[3px_3px_0px_0_rgba(114,114,114,1)]  rounded-[30px] md:rounded-full px-2 py-1 mb-[40px]">
+        <div className="bg-white border-2 w-full md:w-3/4 mt-8 border-[#727272] shadow-[3px_3px_0px_0_rgba(114,114,114,1)] rounded-[30px] md:rounded-full px-2 py-1 mb-[40px]">
           <div
             className={`flex flex-wrap ${
               tabs.length > 3 ? "flex-col" : "flex-row"
@@ -118,11 +118,7 @@ const Features = () => {
           </div>
         </div>
         <div className="mt-0">
-          {isPending ? (
-            <></>
-          ) : (
-            tabs.find((tab) => tab.id === activeTab)?.content
-          )}
+          {tabs.find((tab) => tab.id === activeTab)?.content}
         </div>
       </div>
     </div>

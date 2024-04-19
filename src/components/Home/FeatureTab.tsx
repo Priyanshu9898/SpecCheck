@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { BsArrowRightCircleFill } from "react-icons/bs";
 
 interface FeatureTabProps {
   title: string;
@@ -55,10 +56,15 @@ const FeatureTab: React.FC<FeatureTabProps> = ({
         </div>
         <Link
           href={linkUrl}
-          className="flex items-center mt-4 text-blue-600 hover:text-blue-800 transition-colors"
+          className="flex items-center mt-4 text-black hover:text-blue-800 transition-colors group"
         >
-          <span className="mr-2">Learn More</span>
-          <Image src="/icons/arrow-right.svg" alt="" width={24} height={24} />
+          <span className="mr-2 text-black font-semibold group-hover:rotate-0">
+            Learn More
+          </span>
+          <BsArrowRightCircleFill
+            className="-rotate-45 transition-transform duration-300 ease-in-out group-hover:rotate-0"
+            size={25}
+          />
         </Link>
       </div>
       <div className="w-full md:w-1/2">
