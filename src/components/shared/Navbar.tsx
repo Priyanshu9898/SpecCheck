@@ -59,8 +59,8 @@ const Navbar: React.FC = () => {
               Sign up
             </button>
           </Link>
-          <Link href={"/login"}>
-            <button className=" px-4 py-2 rounded-full tracking-widest text-white bg-transparent bg-[#6f56cc] hover:bg-[#5d48a9] hover:border-[#5d48a9] border-[3px] border-[#6f56cc] hover:text-white dark:text-neutral-200 transition duration-200">
+          <Link href="/login">
+            <button className=" px-4 py-2 rounded-full tracking-widest text-white bg-[#6f56cc] hover:bg-[#5d48a9] hover:border-[#5d48a9] border-[3px] border-[#6f56cc] hover:text-white dark:text-neutral-200 transition duration-200">
               Login
             </button>
           </Link>
