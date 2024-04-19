@@ -1,18 +1,8 @@
-// components/FeatureTab.tsx
+import { FeatureTabProps } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
-
-interface FeatureTabProps {
-  title: string;
-  description1: string;
-  description2: string;
-  imageUrl: string;
-  header1: string;
-  header2: string;
-  linkUrl: string;
-}
 
 const FeatureTab: React.FC<FeatureTabProps> = ({
   title,
