@@ -11,8 +11,13 @@ import {
   FiPieChart,
 } from "react-icons/fi";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
+  const pathname = usePathname();
+
+  const isActive = (currPage: string) => pathname === currPage;
+
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -37,19 +42,28 @@ const Navbar: React.FC = () => {
             isOpen ? "block" : "hidden"
           }`}
         >
-          <Link href="/home" className="hover:underline">
+          <Link
+            href="/"
+            className={`hover-link ${isActive("/") ? "active" : ""}`}
+          >
             Home
           </Link>
-          <Link href="/about" className="hover:underline">
+          <Link
+            href="/about"
+            className={`hover-link ${isActive("/about") ? "active" : ""}`}
+          >
             About
           </Link>
-          <Link href="/services" className="hover:underline">
+          {/* <Link href="/services" className="hover:underline">
             Services
           </Link>
           <Link href="/blog" className="hover:underline">
             Blog
-          </Link>
-          <Link href="/contact" className="hover:underline">
+          </Link> */}
+          <Link
+            href="/contact"
+            className={`hover-link ${isActive("/contact") ? "active" : ""}`}
+          >
             Contact
           </Link>
         </div>
