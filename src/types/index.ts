@@ -15,3 +15,10 @@ export interface FeatureTabProps {
   header2: string;
   linkUrl: string;
 }
+
+export interface CustomCardProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+  linkUrl: string;
+}

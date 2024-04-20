@@ -46,6 +46,7 @@ const Features = () => {
 
         <motion.div
           variants={containerVariants}
+          viewport={{}}
           className="bg-white border-2 w-full md:w-3/4 mt-8 border-[#727272] shadow-[3px_3px_0px_0_rgba(114,114,114,1)] rounded-[30px] md:rounded-full px-2 py-1 mb-[40px]"
         >
           <div
@@ -58,7 +59,7 @@ const Features = () => {
                 key={tab.id}
                 variants={containerVariants}
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{}}
                 className={`flex-1 py-4 text-sm text-[16px] font-semibold text-center rounded-full 
                            ${
                              tab.id === activeTab
