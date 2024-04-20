@@ -1,12 +1,18 @@
 "use client";
 
-// components/ContactSection.tsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiMail, FiMessageCircle, FiPhone, FiUser } from "react-icons/fi";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactSection = () => {
+  function onChange(value: any) {
+    console.log("Captcha value:", value);
+  }
+
+  const sikeKey: string = process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_KEY || "";
+
   return (
     <div className="bg-[#6f56cc] text-white mx-auto px-0 md:px-16 py-20 lg:px-32 overflow-hidden flex flex-col items-center justify-center md:flex-row">
       <div className="flex-1 p-4 w-3/4">
@@ -115,7 +121,6 @@ const ContactSection = () => {
                 className="flex-1 appearance-none bg-transparent text-gray-700 placeholder-gray-400 focus:outline-none"
               />
             </div>
-
             <div className="flex items-start border px-4 py-3 border-black rounded-md">
               <FiMessageCircle
                 className="text-gray-400 mt-1 mr-2"
@@ -128,7 +133,8 @@ const ContactSection = () => {
                 rows={5}
               />
             </div>
-            <div className="text-sm text-gray-600 my-2">
+            <ReCAPTCHA sitekey={sikeKey} onChange={onChange} />
+            <div className="text-[10px] text-gray-600 my-1">
               By clicking “Submit Now”, you agree to our{" "}
               <Link href="/terms" className="text-blue-500 underline">
                 Terms of Use
@@ -139,6 +145,7 @@ const ContactSection = () => {
               </Link>
               .
             </div>
+
             <button
               type="submit"
               className="w-full rounded-full bg-[#a6c03d] hover:bg-[#b2c761] text-white font-bold px-4 py-4"
