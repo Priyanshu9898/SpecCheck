@@ -27,6 +27,7 @@ const Features = () => {
 
   return (
     <motion.div
+      id="learnmore"
       className="container mx-auto px-4 md:px-16 py-20 lg:px-32 overflow-hidden"
       initial="hidden"
       whileInView="visible"

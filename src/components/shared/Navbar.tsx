@@ -46,6 +46,12 @@ const Navbar: React.FC = () => {
           <Link href="/services" className="hover:underline">
             Services
           </Link>
+          <Link href="/blog" className="hover:underline">
+            Blog
+          </Link>
+          <Link href="/contact" className="hover:underline">
+            Contact
+          </Link>
         </div>
 
         {/* Auth Buttons */}
